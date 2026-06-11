@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Aroma D' Café — QR Code</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia',serif;background:#F5EDD8;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;}
+.card{background:#FFFFFF;border-radius:24px;padding:32px 28px;text-align:center;max-width:320px;width:100%;box-shadow:0 4px 32px rgba(0,0,0,0.12);}
+.flag-stripe{height:5px;background:linear-gradient(90deg,#2470C8 0%,#2470C8 33%,#fff 33%,#fff 66%,#2470C8 66%);border-radius:4px;margin-bottom:20px;}
+.top-flags{font-size:32px;letter-spacing:6px;margin-bottom:12px;}
+.cafe-name{font-size:22px;font-weight:700;color:#1C1008;letter-spacing:.5px;margin-bottom:3px;}
+.cafe-name span{color:#2470C8;}
+.cafe-sub{font-size:12px;color:#9A7860;margin-bottom:20px;font-family:'Arial',sans-serif;}
+.qr-wrap{background:#F5EDD8;border-radius:16px;padding:16px;display:inline-block;margin-bottom:16px;border:2px solid #E8D8C0;}
+#qrcode{display:inline-block;}
+.scan-lbl{font-size:13px;font-weight:700;color:#2470C8;margin-bottom:6px;letter-spacing:1px;font-family:'Arial',sans-serif;text-transform:uppercase;}
+.desc{font-size:11px;color:#9A7860;line-height:1.7;margin-bottom:16px;font-family:'Arial',sans-serif;}
+.divider{height:1px;background:#E8D8C0;margin:14px 0;}
+.addr{font-size:12px;font-weight:600;color:#5A3A20;font-family:'Arial',sans-serif;}
+.url-txt{font-size:9px;color:#B4C4A8;margin-top:8px;word-break:break-all;font-family:'Arial',sans-serif;}
+.powered{font-size:9px;color:#D4C4A8;letter-spacing:2px;text-transform:uppercase;margin-top:10px;font-family:'Arial',sans-serif;}
+.print-btn{display:block;margin:24px auto 0;background:#2470C8;color:#fff;border:none;border-radius:10px;padding:11px 28px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:1px;font-family:'Arial',sans-serif;}
+@media print{.print-btn{display:none;}body{background:#fff;}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="flag-stripe"></div>
+  <div class="top-flags">🇦🇷 ⚽ 🏆</div>
+  <div class="cafe-name">Aroma D' <span>Café</span></div>
+  <div class="cafe-sub">Authentic Argentine Bakery · East Rutherford NJ</div>
+  <div class="qr-wrap"><div id="qrcode"></div></div>
+  <div class="scan-lbl">Scan to Order</div>
+  <div class="desc">
+    Pre-order empanadas & coffee<br>
+    Follow Argentina's World Cup journey<br>
+    Skip the line on match day 🏆
+  </div>
+  <div class="divider"></div>
+  <div class="addr">📍 267 Paterson Ave · East Rutherford NJ<br>2 min from MetLife Stadium</div>
+  <div class="url-txt">izmylg-coder.github.io/aroma-veronica</div>
+  <div class="divider"></div>
+  <div class="powered">Powered by MatchOrder</div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨️ Print QR Card</button>
+
+<script>
+new QRCode(document.getElementById("qrcode"), {
+  text: "https://izmylg-coder.github.io/aroma-veronica/",
+  width: 200,
+  height: 200,
+  colorDark: "#1C1008",
+  colorLight: "#F5EDD8",
+  correctLevel: QRCode.CorrectLevel.H
+});
+</script>
+</body>
+</html>
